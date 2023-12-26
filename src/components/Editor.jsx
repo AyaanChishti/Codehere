@@ -4,7 +4,7 @@ const axios = require("axios");
 const Editor = () => {
   // const [state, setState] = { input: "" };
   function getRequest(token) {
-    let URL = `https://judge0-ce.p.rapidapi.com/submissions/${token}`;
+    const URL = `https://judge0-ce.p.rapidapi.com/submissions/${token}`;
     console.log(URL);
     const output = {
       method: "GET",
@@ -27,7 +27,7 @@ const Editor = () => {
       });
   }
   function submitbtn() {
-    var source_code = document.querySelector(".code").value;
+    let source_code = document.querySelector(".code").value;
 
     console.log(source_code);
 
@@ -52,7 +52,7 @@ const Editor = () => {
     axios
       .request(options)
       .then((response) => {
-        var token = response.data;
+        let token = response.data;
 
         // token = JSON.parse(token);
         console.log(token.token);
